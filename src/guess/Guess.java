@@ -8,7 +8,7 @@ package guess;
 import java.util.*;
 
 /**
- *
+ * Have the user guess a number between 1-10 until correct.
  * @author Administrator
  */
 public class Guess {
