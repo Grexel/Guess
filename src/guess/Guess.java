@@ -30,8 +30,11 @@ public class Guess {
             if(guess == randomNumber){
                 System.out.println("You guessed it!");
             }
-            else{
-                System.out.println("Sorry, wrong number.");
+            else if(guess < randomNumber){
+                System.out.println("Too low.");
+            }
+            else if(guess > randomNumber){
+                System.out.println("Too high.");
             }
         }
     }  
