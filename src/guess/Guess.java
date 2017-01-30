@@ -50,6 +50,7 @@ public class Guess {
                 System.out.println("Too high.");
             }
             else{
+                //totally unnecessary else statement
                 System.out.println("You're a wizard, Harry!");
             }
         }
