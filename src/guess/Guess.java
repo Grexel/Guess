@@ -9,7 +9,7 @@ import java.util.*;
 
 /**
  * Have the user guess a number between 1-10 until correct.
- * @author Administrator
+ * @author Jeffrey Miller
  */
 public class Guess {
     public static void main(String[] args) {
