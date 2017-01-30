@@ -5,6 +5,7 @@
  */
 package guess;
 
+import java.io.*;
 import java.util.*;
 
 /**
@@ -12,33 +13,50 @@ import java.util.*;
  * @author Jeffrey Miller
  */
 public class Guess {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        Random rand = new Random();
-        int randomNumber;
-        int guess;
-        
-        randomNumber = rand.nextInt(10) + 1;
+    Scanner sc;
+    PrintStream out;
+    Random rand;
+    
+    int winningNumber;
+    int guess;
+    
+    public Guess(){
+        initialize();
+    }
+    public void initialize(){
+        sc = new Scanner(System.in);
+        rand = new Random();
+        out = System.out;
+        winningNumber = rand.nextInt(10) + 1;
+        guess = -1;
+    }
+    public void playGame(){        
+        winningNumber = rand.nextInt(10) + 1;
         guess = -1;
         
         System.out.println("Jeffrey's guessing game.");
         System.out.println("Guess a number from 1 - 10.");
         
-        while(guess != randomNumber){
+        while(guess != winningNumber){
             System.out.print("Enter a number: ");
             guess = Integer.parseInt(sc.nextLine());
-            if(guess == randomNumber){
+            if(guess == winningNumber){
                 System.out.println("You guessed it!");
             }
-            else if(guess < randomNumber){
+            else if(guess < winningNumber){
                 System.out.println("Too low.");
             }
-            else if(guess > randomNumber){
+            else if(guess > winningNumber){
                 System.out.println("Too high.");
             }
             else{
                 System.out.println("You're a wizard, Harry!");
             }
         }
+        
+    }
+    public static void main(String[] args) {
+        Guess g = new Guess();
+        g.playGame();
     }
 }
