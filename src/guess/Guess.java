@@ -36,6 +36,9 @@ public class Guess {
             else if(guess > randomNumber){
                 System.out.println("Too high.");
             }
+            else{
+                System.out.println("You're a wizard, Harry!");
+            }
         }
-    }  
+    }
 }
